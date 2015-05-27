@@ -1,0 +1,4 @@
+abstract.*
+!abstract.Rnw
+!abstract.pdf
+cache/

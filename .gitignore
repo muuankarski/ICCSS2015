@@ -1,0 +1,8 @@
+ICCSS2015.Rproj
+abstract/abstract.*
+abstract/abstract-concordance.tex
+!abstract/abstract.Rnw
+!abstract/abstract.pdf
+abstract/cache
+.Rproj.user
+.Rhistory
