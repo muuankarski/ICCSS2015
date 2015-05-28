@@ -39,82 +39,143 @@
 
 \vspace{1mm}
 
-Open availability of scientific and governmental data is increasing rapidly, creating novel opportunities for quantitative social sciences, data journalism, and citizen science. High-quality machine readable data sources relevant to social sciences are now becoming available across the globe related to political decision making, welfare, stratification, traffic, and other fields. In addition to social network analysis that has gained popularity in the field (Lazer et al., 2006), there are ample opportunities to expand the scope of computational social science research based on open governmental data sources. However, these resources are currently highly scattered and come in various formats, hindering their wider adoption. Various web-based tools for specific analysis tasks are available, but more flexible computational tools are urgently needed for more flexible and precise data processing and analyses. In particular, flexible algorithms are needed to clean up raw data and carry out fast expert-driven interactive data exploration and visualization.
+\section{Title \& authors}
 
-There have been few attempts (King et all. 2013, Jockers 2013) within the academia to systematically bring the new data streams and computational methods into use in social science. We emphasize the importance of domain specific computational ecosystems in this task, and propose as one solution the \href{http://ropengov.github.io }{rOpenGov} community-driven ecosystem. It is based on the \href{http://www.r-project.org/}{R statistical programming language}, which has a strong track record in other fields, a versatile computational ecosystem and an active developer community. Within the R ecosystem there is a well established software release system, support for rich statistical simulation and modeling functions, and state-of-the-art visualization capabilities for addressing the diversity of analysis tasks in social sciences. With rOpenGov, we complement this existing ecosystem by providing a versatile set of R-based tools to access, preprocess and analyze open governmental data streams specifically relevant to social sciences. 
-
-The rOpenGov project builds on lessons learned from similar initiatives in other fields such as \href{http://www.bioconductor.org}{Bioconductor} and \href{http://ropensci.org}{rOpenSci}. As these examples have shown, a community-driven open source approach is central as data availability is increasing, helping to pool scarce research resources. Using transparent research tools improve research reproducibility by providing standard workflows that can be easily adapted to different analytical tasks. The shared software ecosystem enables rapid development of extensible, scalable, and interoperable software, improvements through bug fixing, and provides tools to explore and expand the quantitative social science research methods.
-
-The rOpenGov project launched in 2013 and is maintained by a core team of PhD-level computational scientists. The core team provides support for package authors and the user community by maintaining the infrastructure, reviewing new packages, and proposing recommended guidelines. An international contributor base has emerged from countries including the USA, Finland, Sweden, Austria, and Poland. The project is maintained in \href{https://github.com/ropengov}{GitHub}. 
+[TODO lisätäänkö Mikko Tolonen tekijälistalle? Lisäksi pitää kysyä
+tahtooko Juha olla nyt mukana kun ei olekaan vaalijuttua +
+kansanmuistia posterissa]
 
 
-Election data analytics is a specific example of an active community project with implications for research and public outreach. We have created a public website \href{http://www.kansanmuisti.fi/}{kansanmuisti.fi/} to collect and organize openly available election related data in Finland, including a million social media feeds from election candidates collected since 2012, historical election statistics, funding information of the candidates, and personal information (age, gender, home town) regarding the election candidates. The data is being collected at a continuous basis and made available in machine readable format through an open API at \href{http://www.datavaalit.fi/}{datavaalit.fi}.
+\section{Background}
 
-In addition to creating a comprehensive collection of election data, we are creating tools for computational analysis of this information. Importantly, we are creating standardized representation formats for election data in R that would allow commensurable data representations across national borders and subsequently accelerating the development of general-purpose computational tools for election data. This borrows the success of analogous representations for gene expression data in bioinformatics during the past decade. As the election data sets are brought within a common representation format, it is possible to create general-purpose analytical tools. We are now building open source algorithms based on previously proposed models to predict election results, detect election fraud, and compare different varieties of election systems such as elections in EU and Russia (see Figure 1).
-
-The launching of the rOpenGov project has been successful, and the current infrastructure provides a strong basis for building up scalable open source ecosystem for flexible data analytics dedicated to computational social sciences.
-
-
-<<plot, echo=FALSE, warning=FALSE, cache=TRUE, message=FALSE, eval=TRUE, fig.cap="Support for the ruling party \\emph{United Russia} in the four latest national elections in regions of Russia (Source: \\href{http://www.cikrf.ru/}{Central Election Commission of the Russian Federation})", fig.height=5, fig.width=7>>=
-load("data/dfx.rda")
-library(extrafont)
-loadfonts()
-library(ggplot2)
-p <- ggplot(df.x, aes_string(x="variable",y="value",group="ID",color="federal_district"))
-p <- p + geom_line()
-p <- p + geom_text(data=enddata, 
-            aes(x=4, y=value,label=region_en),
-            hjust=-.2,size=2.5,family="Gentium", show_guide  = F)
-p <- p + geom_text(data=begindata, 
-            aes(x=1, y=value,label=region_en), 
-            hjust=1,size=2.5,family="Gentium", show_guide  = F)
-p <- p + geom_text(data=thirddata, 
-            aes(x=3, y=value,label=region_en), 
-            hjust=.3,vjust=-.5,size=2.5,family="Gentium", show_guide  = F)
-p <- p + geom_text(data=seconddata, 
-            aes(x=2, y=value,label=region_en), 
-            hjust=.3,vjust=-.5,size=2.5,family="Gentium", show_guide  = F)
-p <- p + theme_minimal() +
-         theme(text = element_text(family="Gentium")) +
-         theme(legend.position="top") +
-         theme(legend.title=element_text(size=9, face="bold")) +
-         theme(legend.text=element_text(size=8))
-p <- p + labs(x="",
-              y="voting share of the ruling party (%)")
-p <- p + guides(color = guide_legend(title = "Russian Economic Regions", 
-                                     title.position = "top", 
-                                     title.hjust=.5,
-                                     nrow=2,
-                                     override.aes = list(size=1)))
-p <- p + scale_color_manual(values  = c("#000041", "#0000CB", "#0081FF", "#02DA81", "#80FE1A", "#FDEE02", "#FFAB00", "#FF3300"))
-p
-  
+The recent explosion in open data availability has created novel
+opportunities for research, journalism and citizen
+science. High-quality machine readable data streams are increasingly
+available on political decision making, historical processes, welfare,
+traffic, and other aspects of society. There is a great need for
+analytical tools to take advantage of these new data streams in
+computational social science, digital humanities, and related fields.
 
 
+\section{Open source data analytics}
 
-@
+Efficient data analysis relies on customized, reproducible analysis
+workflows that are best developed jointly by the user community.
+Availability of ready-made algorithms for standard data analysis tasks
+allows an individual researcher to avoid reinventing the wheel,
+leaving more time to solve the specific research problems. Solutions
+have emerged in data intensive research fields, such as bioinformatics
+and particle physics, based on open source statistical programming
+languages. In computational social sciences and digital humanities,
+analogous statistical software libraries are now emerging and have a
+huge potential to contribute to transforming the field. However, these
+resources are currently highly scattered and come in various formats,
+hindering wider adoption. Specific web-based tools are available, but
+more flexible computational tools are urgently needed for fully
+powered data processing and analysis.
+
+\section{rOpenGov developer community and ecosystem}
+
+rOpenGov is a statistical ecosystem focused on open source data
+analysis algorithms relevant to computational social sciences and
+digital humanities. We provide a discussion forum and flexible
+algorithms for reproducible data analysis in these fields. We are a
+community of independent package developers from various countries,
+and we build on experiences learned from similar initiatives in other
+fields, such as Bioconductor and rOpenSci.
+
+rOpenGov is based on the R statistical programming language, which has
+a versatile computational ecosystem with rich statistical modeling and
+state-of-the-art visualization capabilities. We are actively
+monitoring developments in other languages, such as Python and
+Julia. The wide scope of the R language is essential for addressing
+the diversity of analysis tasks. We complement the prevailing R
+ecosystem with custom tools for computational social sciences and
+digital humanities. The packages are distributed through Github
+(ropengov.github.io). The project is maintained by a core team and a
+number of independent contributors (see the rOpenGov site for the
+up-to-date author list) [EI VARMAAN KANDE KAIKKIA AUTHOREITA LISTATA
+POSTERISSA VAIKKA PERIAATTEESSA VOISI - ENSINNÄKIN LISTA PÄIVITTYY
+JATKUVASTI JA JOS OIKEIN HUONO TUURI KÄY NIIN JOKU VOI VAHINGOSSA
+UNOHTUA JA LOUKKAANTUA].
+
+
+\section{Example: Eurostat tools}
 
 
 
-\begin{thebibliography}{99}
-\footnotesize
+
+\section{Social coding}
+
+The ecosystem enables rapid development of scalable and interoperable
+software and provides tools to expand the quantitative methods
+base. The advantages of the open development model include:
+
+\begin{itemize}
+
+\item Open source: We use GitHub for shared version control. All
+  contributions are openly licensed. This guarantees that the tools
+  are freely available and the international scientific community
+  remains the owner of the research software.
+
+\item Reproducible documentation: High-quality documentation is critical
+  for package usability. We provide online tutorials with fully
+  reproducible documentation on how to access and analyse specific
+  data sources, and to report the statistical results.
+
+\item Transparent research: The programmatic approach makes it possible to
+  publish the data analysis steps from raw data to the final results
+  in full detail. To exemplify this, we publish reproducible case
+  studies based on open data and algorithms in the rOpenGov blog.
+
+\item Standardization: A community-driven approach helps to pool scarce
+  research resources and develop common standards for data
+  analysis. Joint development ensures that the applicability of the
+  tools extends beyond individual data sets and is compatible with
+  other tools. Whereas different research projects can utilize the
+  same standard algorithms to access and preprocess the data, the
+  source code can be flexibly adapted to different tasks.
+
+\end{itemize}
 
 
-\bibitem{sKas}
-  \href{https://github.com/skasberger/grazwahl2012}{S. Kasberger 
-  (2012). Grazwahl: Data Analysis and Visualizations of the communal elections in Graz.}\emph{R package}
-\bibitem{fortu}
-  \href{http://scitation.aip.org/content/aip/magazine/physicstoday/article/65/10/10.1063/PT.3.1761}{S. Fortunato and C. Castellano (2012). Physics peeks into the ballot box. Physics Today 65:74}
-\bibitem{king}
-  \href{http://gking.harvard.edu/files/gking/files/censored.pdf}{G. King, J. Pan and M. E. Roberts (2013). How Censorship in China Allows Government Criticism but Silences Collective Expression. American Political Science Review, 107(02), 326–343}
-\bibitem{jockers}
-  \href{http://www.press.uillinois.edu/books/catalog/88wba3wn9780252037528.html}{M. L. Jockers (2013). Macroanalysis: Digital Methods and Literary History. University of Illinois Press.}
-\bibitem{democ}
-  \href{http://projects.sophiechou.com/papers/Chou-Li-Sridharan-DemocratizingDataScience.pdf}{S. Chou, W. Li and R. Sridharan, Democratizing Data Science.}
-\bibitem{lazer}  
-  \href{http://www.sciencemag.org/content/323/5915/721}{D. Lazer, et al. (2009). Computational Social. Science 323, 721–723}
+\section{Further resources}
 
-\end{thebibliography}
+The rOpenGov tools are distributed as R packages, including for
+instance:
 
+\begin{itemize}
+ \item bibliographica: Bibliographic data analysis
+ \item estc: British Library English Short Title Catalogue analytics
+ \item eurostat: Eurostat open data analysis
+ \item fennica: Finnish national bibliography analytics
+ \item finpar: Finnish parliamentary data
+ \item gisfin: Finnish geographic location information
+ \item helsinki: Helsinki open data tools
+ \item pxweb: R interface to PX-Web data (Statistics Finland \& Sweden etc.)
+ \item rustfare: Russian open data
+ \item sorvi: Finnish open government data
+\end{itemize}
+
+[TODO: NÄITÄ VOISI LISTATA LISÄÄKIN VEPPISIVULTA JA IHAN RYHMITELLÄ
+JOHONKIN BOKSEIHIN?]
+
+
+\section{Contact \& Contribute}
+
+\begin{itemize}
+ \item Web \& Blog: ropengov.github.io
+ \item IRC: ropengov@Freenode
+\end{itemize}
+
+\section{References [ONKOHAN TARPEEN POSTERISSA? JÄTTÄISIN EHKÄ POIS]}
+
+[1] S. Kasberger (2012). Grazwahl: Data Analysis and Visualizations of the communal elections in Graz.R package
+[2] S. Fortunato and C. Castellano (2012). Physics peeks into the ballot box. Physics Today 65:74
+[3] G. King, J. Pan and M. E. Roberts (2013). How Censorship in China Allows Government Criticism but Silences Collective Expression. American
+Political Science Review, 107(02), 326–343
+[4] M. L. Jockers (2013). Macroanalysis: Digital Methods and Literary History. University of Illinois Press.
+[5] S. Chou, W. Li and R. Sridharan, Democratizing Data Science.
+[6] D. Lazer, et al. (2009). Computational Social Science 323, 721–723
 
 \end{document}
