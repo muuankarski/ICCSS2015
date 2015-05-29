@@ -17,34 +17,16 @@
  pdfstartview={XYZ null null 1}}
 \usepackage{authblk}
 
-\title{Computational ecosystems for social science\thanks{Extended abstract submitted for International Conference on Computational Social Science in June 8-11, 2015 in Helsinki, Finland}}
-\author[1]{Markus Kainu \thanks{markuskainu@gmail.com}}
-\author[2]{Joona Lehtomäki \thanks{joona.lehtomaki@helsinki.fi}}
-\author[3]{Juuso Parkkinen \thanks{juuso.parkkinen@iki.fi}}
-\author[4]{Juha Yrjölä \thanks{juha.yrjola@iki.fi}}
-\author[5]{Måns Magnusson \thanks{mans.magnusson@gmail.com}}
-\author[6]{Leo Lahti \thanks{leo.lahti@iki.fi}}
-
-\affil[1]{Aleksanteri Institute, University of Helsinki, Finland}
-\affil[2]{Department of Biosciences, University of Helsinki, Finland}
-\affil[3]{Reaktor Innovations Oy, Finland}
-\affil[4]{Kansan Muisti ry, Finland}
-\affil[5]{Linköping University, Sweden}
-\affil[6]{Department of Veterinary Bioscience, University of Helsinki, Finland}
+\title{Computational ecosystems for social science}
+\date{}
 
 \begin{document}
-%\SweaveOpts{concordance=TRUE}
   \maketitle
-{\bf Keywords:} social science; elections; open government data; statistical programming; machine learning
+
+Markus Kainu\footnote{Aleksanteri Institute, University of Helsinki, Finland}, Joona Lehtomäki\footnote{Department of Biosciences, University of Helsinki, Finland}, Juuso Parkkinen\footnote{Reaktor Innovations Oy, Finland}, Juha Yrjölä\footnote{Kansan Muisti ry, Finland}, Måns Magnusson\footnote{Linköping University, Sweden}, Mikko Tolonen\footnote{University of Helsinki}, Niko Ilomäki\footnote{University of Helsinki}, Leo Lahti\footnote{University of Helsinki}. Contact: ropengov.github.io
+
 
 \vspace{1mm}
-
-\section*{Title \& authors}
-
-[TODO lisätäänkö Mikko Tolonen tekijälistalle? Lisäksi pitää kysyä
-tahtooko Juha olla nyt mukana kun ei olekaan vaalijuttua +
-kansanmuistia posterissa]
-
 
 \section*{Background}
 
