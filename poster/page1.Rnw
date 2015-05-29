@@ -1,0 +1,79 @@
+%\documentclass[draft, 10pt,fleqn,twoside]{article}
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+%\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1.0cm,bmargin=1.5cm,lmargin=1.5cm,rmargin=1.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\usepackage{authblk}
+
+\title{Computational ecosystems for social science\thanks{Extended abstract submitted for International Conference on Computational Social Science in June 8-11, 2015 in Helsinki, Finland}}
+\author[1]{Markus Kainu \thanks{markuskainu@gmail.com}}
+\author[2]{Joona Lehtomäki \thanks{joona.lehtomaki@helsinki.fi}}
+\author[3]{Juuso Parkkinen \thanks{juuso.parkkinen@iki.fi}}
+\author[4]{Juha Yrjölä \thanks{juha.yrjola@iki.fi}}
+\author[5]{Måns Magnusson \thanks{mans.magnusson@gmail.com}}
+\author[6]{Leo Lahti \thanks{leo.lahti@iki.fi}}
+
+\affil[1]{Aleksanteri Institute, University of Helsinki, Finland}
+\affil[2]{Department of Biosciences, University of Helsinki, Finland}
+\affil[3]{Reaktor Innovations Oy, Finland}
+\affil[4]{Kansan Muisti ry, Finland}
+\affil[5]{Linköping University, Sweden}
+\affil[6]{Department of Veterinary Bioscience, University of Helsinki, Finland}
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+  \maketitle
+{\bf Keywords:} social science; elections; open government data; statistical programming; machine learning
+
+\vspace{1mm}
+
+\section*{Title \& authors}
+
+[TODO lisätäänkö Mikko Tolonen tekijälistalle? Lisäksi pitää kysyä
+tahtooko Juha olla nyt mukana kun ei olekaan vaalijuttua +
+kansanmuistia posterissa]
+
+
+\section*{Background}
+
+The recent explosion in open data availability has created novel
+opportunities for research, journalism and citizen
+science. High-quality machine readable data streams are increasingly
+available on political decision making, historical processes, welfare,
+traffic, and other aspects of society. There is a great need for
+analytical tools to take advantage of these new data streams in
+computational social science, digital humanities, and related fields.
+
+
+\section*{Open source data analytics}
+
+Efficient data analysis relies on customized, reproducible analysis
+workflows that are best developed jointly by the user community.
+Availability of ready-made algorithms for standard data analysis tasks
+allows an individual researcher to avoid reinventing the wheel,
+leaving more time to solve the specific research problems. Solutions
+have emerged in data intensive research fields, such as bioinformatics
+and particle physics, based on open source statistical programming
+languages. In computational social sciences and digital humanities,
+analogous statistical software libraries are now emerging and have a
+huge potential to contribute to transforming the field. However, these
+resources are currently highly scattered and come in various formats,
+hindering wider adoption. Specific web-based tools are available, but
+more flexible computational tools are urgently needed for fully
+powered data processing and analysis.
+
+
+
+\end{document}
