@@ -1,5 +1,5 @@
 %\documentclass[draft, 10pt,fleqn,twoside]{article}
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
@@ -16,6 +16,7 @@
 \hypersetup{
  pdfstartview={XYZ null null 1}}
 \usepackage{authblk}
+\usepackage{nopageno}
 
 
 \begin{document}
@@ -23,62 +24,21 @@
 \vspace{1mm}
 
 
-\section{Example: Eurostat tools}
+\section*{Example: Eurostat tools}
 
 
-\section{Social coding}
-
-The ecosystem enables rapid development of scalable and interoperable
-software and provides tools to expand the quantitative methods
-base. The advantages of the open development model include:
-
-\begin{itemize}
-
-\item Open source: We use GitHub for shared version control. All
-  contributions are openly licensed. This guarantees that the tools
-  are freely available and the international scientific community
-  remains the owner of the research software.
-
-\item Reproducible documentation: High-quality documentation is critical
-  for package usability. We provide online tutorials with fully
-  reproducible documentation on how to access and analyse specific
-  data sources, and to report the statistical results.
-
-\item Transparent research: The programmatic approach makes it possible to
-  publish the data analysis steps from raw data to the final results
-  in full detail. To exemplify this, we publish reproducible case
-  studies based on open data and algorithms in the rOpenGov blog.
-
-\item Standardization: A community-driven approach helps to pool scarce
-  research resources and develop common standards for data
-  analysis. Joint development ensures that the applicability of the
-  tools extends beyond individual data sets and is compatible with
-  other tools. Whereas different research projects can utilize the
-  same standard algorithms to access and preprocess the data, the
-  source code can be flexibly adapted to different tasks.
-
-\end{itemize}
+\begin{figure}[h!]
+<<page4-1, eval=TRUE, dev='pdf', fig.height=5, fig.width=5>>=
+p1 <- p + geom_smooth(method="lm")
+p2 <- p + geom_smooth(method="glm")
+p3 <- p + geom_smooth(method="loess")
+p4 <- p + geom_smooth(method="gam")
+grid.arrange(p1,p2,p3,p4, ncol = 2)
+@
+\caption{This is figure caption, too!}
+\end{figure}
 
 
-\section*{Further resources}
 
-The rOpenGov tools are distributed as R packages, including for
-instance:
-
-\begin{itemize}
- \item bibliographica: Bibliographic data analysis
- \item estc: British Library English Short Title Catalogue analytics
- \item eurostat: Eurostat open data analysis
- \item fennica: Finnish national bibliography analytics
- \item finpar: Finnish parliamentary data
- \item gisfin: Finnish geographic location information
- \item helsinki: Helsinki open data tools
- \item pxweb: R interface to PX-Web data (Statistics Finland \& Sweden etc.)
- \item rustfare: Russian open data
- \item sorvi: Finnish open government data
-\end{itemize}
-
-[TODO: NÄITÄ VOISI LISTATA LISÄÄKIN VEPPISIVULTA JA IHAN RYHMITELLÄ
-JOHONKIN BOKSEIHIN?]
 
 \end{document}

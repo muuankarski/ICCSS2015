@@ -1,5 +1,5 @@
 %\documentclass[draft, 10pt,fleqn,twoside]{article}
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
@@ -16,13 +16,34 @@
 \hypersetup{
  pdfstartview={XYZ null null 1}}
 \usepackage{authblk}
+\usepackage{nopageno}
 
 
 \begin{document}
 
 \vspace{1mm}
 
+\section*{Further resources}
 
+The rOpenGov tools are distributed as R packages, including for
+instance:
+
+\begin{itemize}
+ \item bibliographica: Bibliographic data analysis
+ \item estc: British Library English Short Title Catalogue analytics
+ \item eurostat: Eurostat open data analysis
+ \item fennica: Finnish national bibliography analytics
+ \item finpar: Finnish parliamentary data
+ \item gisfin: Finnish geographic location information
+ \item helsinki: Helsinki open data tools
+ \item pxweb: R interface to PX-Web data (Statistics Finland \& Sweden etc.)
+ \item rustfare: Russian open data
+ \item sorvi: Finnish open government data
+\end{itemize}
+
+[TODO: NÄITÄ VOISI LISTATA LISÄÄKIN VEPPISIVULTA JA IHAN RYHMITELLÄ
+JOHONKIN BOKSEIHIN? - JOO VOIS RYHMITELLÄ NIIN VEIS VÄHEMMÄN TILAA.
+LISÄKSI JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA.]
 
 
 \section*{Contact \& Contribute}
@@ -42,16 +63,7 @@ Political Science Review, 107(02), 326–343
 [5] S. Chou, W. Li and R. Sridharan, Democratizing Data Science.
 [6] D. Lazer, et al. (2009). Computational Social Science 323, 721–723
 
-\begin{figure}
-<<page4-1, eval=TRUE, dev='pdf', fig.height=5, fig.width=5>>=
-p1 <- p + geom_smooth(method="lm")
-p2 <- p + geom_smooth(method="glm")
-p3 <- p + geom_smooth(method="loess")
-p4 <- p + geom_smooth(method="gam")
-grid.arrange(p1,p2,p3,p4, ncol = 2)
-@
-\caption{This is figure caption, too!}
-\end{figure}
+
 
 
 \end{document}

@@ -1,5 +1,5 @@
 %\documentclass[draft, 10pt,fleqn,twoside]{article}
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
@@ -16,8 +16,9 @@
 \hypersetup{
  pdfstartview={XYZ null null 1}}
 \usepackage{authblk}
+\usepackage{nopageno}
 
-\title{Computational ecosystems for social science}
+\title{Computational Ecosystems for Social Science}
 \date{}
 
 \begin{document}
@@ -28,18 +29,27 @@ Markus Kainu\footnote{Aleksanteri Institute, University of Helsinki, Finland}, J
 
 \vspace{1mm}
 
-\section*{Background}
+\section*{Open data creates opportunities}
 
 The recent explosion in open data availability has created novel
-opportunities for research, journalism and citizen
-science. High-quality machine readable data streams are increasingly
+opportunities for research, journalism and citizenscience. 
+High-quality machine readable data streams are increasingly
 available on political decision making, historical processes, welfare,
-traffic, and other aspects of society. There is a great need for
-analytical tools to take advantage of these new data streams in
-computational social science, digital humanities, and related fields.
+traffic, and other aspects of society. 
+
+\section*{Need for analytical tools}
+
+Taking advantage of these new data streams in
+computational social science, digital humanities, and related fields
+needs novel analytical tools. First software libraries are now emerging and have a
+huge potential to contribute to transforming these fields. However, these
+resources are currently highly scattered and come in various formats,
+hindering wider adoption. Specific web-based tools are available, but
+more flexible computational tools are urgently needed for fully
+powered data processing and analysis.
 
 
-\section*{Open source data analytics}
+\section*{Power of open source communities}
 
 Efficient data analysis relies on customized, reproducible analysis
 workflows that are best developed jointly by the user community.
@@ -48,14 +58,37 @@ allows an individual researcher to avoid reinventing the wheel,
 leaving more time to solve the specific research problems. Solutions
 have emerged in data intensive research fields, such as bioinformatics
 and particle physics, based on open source statistical programming
-languages. In computational social sciences and digital humanities,
-analogous statistical software libraries are now emerging and have a
-huge potential to contribute to transforming the field. However, these
-resources are currently highly scattered and come in various formats,
-hindering wider adoption. Specific web-based tools are available, but
-more flexible computational tools are urgently needed for fully
-powered data processing and analysis.
+languages. The resulting communities, such as Bioconductor (http://bioconductor.org/)
+have proven highly successful, acting as an example for other fields to follow.
 
 
+
+
+% \section*{Background}
+% 
+% The recent explosion in open data availability has created novel
+% opportunities for research, journalism and citizen
+% science. High-quality machine readable data streams are increasingly
+% available on political decision making, historical processes, welfare,
+% traffic, and other aspects of society. There is a great need for
+% analytical tools to take advantage of these new data streams in
+% computational social science, digital humanities, and related fields.
+
+% \section*{Open source data analytics}
+% 
+% Efficient data analysis relies on customized, reproducible analysis
+% workflows that are best developed jointly by the user community.
+% Availability of ready-made algorithms for standard data analysis tasks
+% allows an individual researcher to avoid reinventing the wheel,
+% leaving more time to solve the specific research problems. Solutions
+% have emerged in data intensive research fields, such as bioinformatics
+% and particle physics, based on open source statistical programming
+% languages. In computational social sciences and digital humanities,
+% analogous statistical software libraries are now emerging and have a
+% huge potential to contribute to transforming the field. However, these
+% resources are currently highly scattered and come in various formats,
+% hindering wider adoption. Specific web-based tools are available, but
+% more flexible computational tools are urgently needed for fully
+% powered data processing and analysis.
 
 \end{document}

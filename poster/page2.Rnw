@@ -1,5 +1,5 @@
 %\documentclass[draft, 10pt,fleqn,twoside]{article}
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
@@ -16,37 +16,81 @@
 \hypersetup{
  pdfstartview={XYZ null null 1}}
 \usepackage{authblk}
-
+\usepackage{nopageno}
 
 \begin{document}
 
 \vspace{1mm}
 
-\section*{rOpenGov developer community and ecosystem}
+\section*{rOpenGov - An emerging ecosystem}
+
+%\section*{rOpenGov developer community and ecosystem}
 
 rOpenGov is a statistical ecosystem focused on open source data
 analysis algorithms relevant to computational social sciences and
-digital humanities. We provide a discussion forum and flexible
-algorithms for reproducible data analysis in these fields. We are a
-community of independent package developers from various countries,
+digital humanities. 
+% We provide a discussion forum and flexible
+% algorithms for reproducible data analysis in these fields.
+The project is maintained by a core team and a
+number of independent contributors from various countries,
 and we build on experiences learned from similar initiatives in other
 fields, such as Bioconductor and rOpenSci.
-
-rOpenGov is based on the R statistical programming language, which has
+% We are a
+% community of independent package developers from various countries,
+% and we build on experiences learned from similar initiatives in other
+% fields, such as Bioconductor and rOpenSci.
+rOpenGov is based on the
+R statistical programming language, which has
 a versatile computational ecosystem with rich statistical modeling and
-state-of-the-art visualization capabilities. We are actively
-monitoring developments in other languages, such as Python and
-Julia. The wide scope of the R language is essential for addressing
-the diversity of analysis tasks. We complement the prevailing R
-ecosystem with custom tools for computational social sciences and
-digital humanities. The packages are distributed through Github
-(ropengov.github.io). The project is maintained by a core team and a
-number of independent contributors (see the rOpenGov site for the
-up-to-date author list).
+state-of-the-art visualization capabilities.
+% We are actively
+% monitoring developments in other languages, such as Python and
+% Julia. The wide scope of the R language is essential for addressing
+% the diversity of analysis tasks. We complement the prevailing R
+% ecosystem with custom tools for computational social sciences and
+% digital humanities.
+% The packages are distributed through Github
+% (ropengov.github.io). The project is maintained by a core team and a
+% number of independent contributors.
+
+% (see the rOpenGov site for the up-to-date author list).
 
 
-\begin{figure}
-<<page2-1, eval=TRUE, dev='pdf', fig.height=3, fig.width=5>>=
+\section*{Ecosystem benefits}
+
+The ecosystem enables rapid development of scalable and interoperable
+software and provides tools to expand the quantitative methods
+base. The advantages of the open development model include:
+
+\begin{itemize}
+
+\item \textbf{Open source}: We use GitHub for shared version control. All
+  contributions are openly licensed. This guarantees that the tools
+  are freely available and the international scientific community
+  remains the owner of the research software.
+
+\item \textbf{Reproducible documentation}: High-quality documentation is critical
+  for package usability. We provide online tutorials with fully
+  reproducible documentation on how to access and analyse specific
+  data sources, and to report the statistical results.
+
+\item \textbf{Transparent research}: The programmatic approach makes it possible to
+  publish the data analysis steps from raw data to the final results
+  in full detail. To exemplify this, we publish reproducible case
+  studies based on open data and algorithms in the rOpenGov blog.
+
+\item \textbf{Standardization}: A community-driven approach helps to pool scarce
+  research resources and develop common standards for data
+  analysis. Joint development ensures that the applicability of the
+  tools extends beyond individual data sets and is compatible with
+  other tools. Whereas different research projects can utilize the
+  same standard algorithms to access and preprocess the data, the
+  source code can be flexibly adapted to different tasks.
+
+\end{itemize}
+
+\begin{figure}[h!]
+<<page2-1, eval=TRUE, echo=FALSE, dev='pdf', fig.height=3, fig.width=5>>=
 p <- ggplot(mtcars, aes(x=mpg,y=qsec,color=cyl))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
