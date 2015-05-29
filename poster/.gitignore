@@ -1,3 +1,5 @@
+page?.pdf
+page?.tex
 *.aux
 *.out
 *.log
