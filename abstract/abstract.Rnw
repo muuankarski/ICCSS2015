@@ -27,7 +27,7 @@
 
 \affil[1]{Aleksanteri Institute, University of Helsinki, Finland}
 \affil[2]{Department of Biosciences, University of Helsinki, Finland}
-\affil[3]{Reaktor Innovations Oy, Finland}
+\affil[3]{Reaktor, Finland}
 \affil[4]{Kansan Muisti ry, Finland}
 \affil[5]{Linköping University, Sweden}
 \affil[6]{Department of Veterinary Bioscience, University of Helsinki, Finland}
