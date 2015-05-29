@@ -1,8 +1,20 @@
 # Idea - Create four A4 pdf's and bind them together into single A2 file using pdfjam
 
+
 library(ggplot2)
 library(gridExtra)
-setwd("~/btsync/mk/workspace/ropengov/ICCSS2015/poster")
+
+# This does not work in shared development, removing
+#setwd("~/btsync/mk/workspace/ropengov/ICCSS2015/poster")
+
+# ---------------------------------------------
+
+# Front page
+
+library(knitr)
+knit2pdf("abstract.Rnw")
+
+# ---------------------------------------------
 
 # Plots
 p <- ggplot(mtcars, aes(x=mpg,y=qsec,color=cyl))
@@ -24,4 +36,4 @@ grid.arrange(p1,p2,p3,p4, ncol = 2)
 dev.off()
 
 # And lets take the first page from the abstract jam them together into A2 poster
-system("pdfjam  ../abstract.pdf 1 p1.pdf p2.pdf p3.pdf --nup 2x2  --a2paper --outfile poster.pdf")
+system("pdfjam  abstract.pdf 1 p1.pdf p2.pdf p3.pdf --nup 2x2  --a2paper --outfile poster.pdf")

@@ -1,3 +1,5 @@
+tmp*
+*~
 abstract.*
 !abstract.Rnw
 !abstract.pdf
