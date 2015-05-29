@@ -12,28 +12,11 @@ library(gridExtra)
 # Front page
 
 library(knitr)
-knit2pdf("abstract.Rnw")
-
-# ---------------------------------------------
-
-# Plots
-p <- ggplot(mtcars, aes(x=mpg,y=qsec,color=cyl))
-p <- p + geom_point()
-# Plot1
-p1 <- p + geom_smooth(method="lm")
-ggsave(p1, filename = "p1.pdf", width = 8.3, height = 11.7)
-# Plot2
-p1 <- p + geom_smooth(method="lm")
-p2 <- p + geom_smooth(method="glm")
-pdf("p2.pdf", width = 8.3, height = 11.7)
-grid.arrange(p1,p2, ncol = 2)
-dev.off()
-# Plot3
-p3 <- p + geom_smooth(method="loess")
-p4 <- p + geom_smooth(method="gam")
-pdf("p3.pdf", width = 8.3, height = 11.7)
-grid.arrange(p1,p2,p3,p4, ncol = 2)
-dev.off()
+knit2pdf("page1.Rnw")
+knit2pdf("page2.Rnw")
+knit2pdf("page3.Rnw")
+knit2pdf("page4.Rnw")
 
 # And lets take the first page from the abstract jam them together into A2 poster
-system("pdfjam  abstract.pdf 1 p1.pdf p2.pdf p3.pdf --nup 2x2  --a2paper --outfile poster.pdf")
+system("pdfjam  page1.pdf 1 page2.pdf page3.pdf page4.pdf --nup 2x2  --a2paper --outfile poster.pdf")
+
