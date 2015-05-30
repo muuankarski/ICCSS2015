@@ -31,7 +31,10 @@
 
 The rOpenGov tools are distributed as R packages, including for
 instance: JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA
-ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA.]
+ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA - katotaan aluksi toi
+Eurostat-esimerkki, ja sen jälkeen et miten mahtuis + sopii. Samaa
+mieltä et vois toimia kyllä mut pitää samalla varoa ettei tunge liikaa
+kamaa yhteen posteriin / LL]
 
 % Define box and box title style
 \tikzstyle{mybox} = [draw=red, fill=blue!20, very thick,
@@ -96,7 +99,7 @@ ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA.]
 
     \end{minipage}
     };
-\node[fancytitle] at (box.north) {Digital humanities};
+\node[fancytitle] at (box.west) {Digital humanities};
 \end{tikzpicture}
 %
 
@@ -114,7 +117,7 @@ ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA.]
 
     \end{minipage}
     };
-\node[fancytitle] at (box.north) {Parliamentary monitoring};
+\node[fancytitle] at (box.north east) {Parliamentary monitoring};
 \end{tikzpicture}
 %
 
@@ -135,7 +138,7 @@ ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA.]
 
     \end{minipage}
     };
-\node[fancytitle] at (box.north) {Data processing and visualization};
+\node[fancytitle] at (box.north east) {Data processing and visualization};
 \end{tikzpicture}
 %
 
