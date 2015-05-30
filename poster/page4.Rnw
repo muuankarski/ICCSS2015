@@ -27,120 +27,88 @@
 
 \vspace{1mm}
 
-%\section*{Further resources}
-
 The rOpenGov tools are distributed as R packages, including for
 instance: JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA
 ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA - katotaan aluksi toi
-Eurostat-esimerkki, ja sen jälkeen et miten mahtuis + sopii. Samaa
-mieltä et vois toimia kyllä mut pitää samalla varoa ettei tunge liikaa
-kamaa yhteen posteriin / LL]
+Eurostat-esimerkki, ja sen jälkeen et miten mahtuis + sopii. vois
+toimia mut pitää samalla varoa ettei tunge liikaa kamaa yhteen
+posteriin / LL]
 
-% Define box and box title style
-\tikzstyle{mybox} = [draw=red, fill=blue!20, very thick,
+% Define textbox styles
+\tikzstyle{mybox} = [draw=blue, fill=green!20, very thick,
     rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-\tikzstyle{fancytitle} =[fill=red, text=white]
+\tikzstyle{fancytitle} =[fill=white, text=black, ellipse, draw=blue]
 
-\begin{tikzpicture}
-\node [mybox] (box){%
-    \begin{minipage}{0.50\textwidth}
+
+\begin{tikzpicture}[baseline=0cm, node distance = 9cm, auto]
+\node [mybox] (boxogd){%
+    \begin{minipage}{0.44\textwidth}
       % You can also put LaTeX equations here !
       \begin{itemize}
- \item eurostat: Eurostat open data analysis
- \item rustfare: Russian open data
- \item helsinki: Helsinki open data tools
- \item sorvi: Finnish open government data
- \item SmarterPoland Poland state data
- \item federalregister U.S. Federal Register API
- \item recalls 	Access U.S. Federal Government Recall Data
- \item sotkanet Sotkanet R Tools
- \item mpg FuelEconomy.gov Data      
+        \item eurostat: Eurostat open data analysis
+ 	\item rustfare: Russian open data
+ 	\item helsinki: Helsinki open data tools
+ 	\item sorvi: Finnish open government data
+ 	\item SmarterPoland Poland state data
+ 	\item federalregister U.S. Federal Register API
+ 	\item recalls Access U.S. Federal Government Recall Data
+ 	\item sotkanet Sotkanet R Tools
+ 	\item mpg FuelEconomy.gov Data      
       \end{itemize}
     \end{minipage}
 };
-\node[fancytitle, right=10pt] at (box.north west) {Open Government Data};
-%\node[fancytitle, rounded corners] at (box.east) {$\clubsuit$};
-\end{tikzpicture}%
-%
-\tikzstyle{mybox} = [draw=blue, fill=green!20, very thick,
-    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-\tikzstyle{fancytitle} =[fill=blue, text=white, ellipse]
-%
-\begin{tikzpicture}[transform shape, rotate=0, baseline=-3.5cm]
-\node [mybox] (box) {%
-    \begin{minipage}[t!]{0.5\textwidth}
+\node[fancytitle, right=10pt] at (boxogd.north west) {Open Government Data};
 
+\node [mybox, right of=boxogd] (box) {%
+    \begin{minipage}{0.44\textwidth}
     \begin{itemize}
+      \item gisfin Finnish geographic location information
+      \item osmar OpenStreetMap tools
+      \item rwfs WFS client
+      \item usbroadband Data for U.S. National Broadband Map 
+      \item psData Political science data sets 
+      \item replicaX Data anonymization tools
       \item pxweb PX-Web data (Statistics Finland \& Sweden etc.)
       \item dkstat StatBank from Statistics Denmark.	
       \item enigma Enigma API client
       \item fmi Finnish Meteorological Institute open data 
-      \item pollstR	Huffpost Pollster API
       \item RPublica ProPublica API 
       \item rsunlight Interface to Sunlight Foundation
-      \item rtimes New York Times APIs.
+      \item rtimes New York Times APIs.      
     \end{itemize}
-
     \end{minipage}
     };
-\node[fancytitle] at (box.north) {API packages};
+\node[fancytitle] at (box.north) {Data processing and visualization};
+
 \end{tikzpicture}
 
-%
-\begin{tikzpicture}[transform shape, rotate=0, baseline=-3.5cm]
-\node [mybox] (box) {%
-    \begin{minipage}[t!]{0.5\textwidth}
-
+\begin{tikzpicture}[transform shape, rotate=0, baseline=0cm, node distance=9cm]
+\node [mybox] (boxdh) {%
+    \begin{minipage}[t]{0.44\textwidth}
     \begin{itemize}
       \item bibliographica: Bibliographic data analysis
       \item estc: British Library English Short Title Catalogue analytics
       \item fennica: Finnish national bibliography analytics
     \end{itemize}
-
     \end{minipage}
     };
-\node[fancytitle] at (box.west) {Digital humanities};
-\end{tikzpicture}
-%
+\node[fancytitle] at (boxdh.north) {Digital humanities};
 
-
-%
-\begin{tikzpicture}[transform shape, rotate=0, baseline=-3.5cm]
-\node [mybox] (box) {%
-    \begin{minipage}[t!]{0.5\textwidth}
+\node [mybox, right of=boxdh] (boxpmo) {%
+    \begin{minipage}[t]{0.44\textwidth}
 
     \begin{itemize}
-      \item finpar: Finnish parliamentary data
-      \item Grazwahl2012: Austria elections
+      \item finpar Finnish parliamentary data
+      \item Grazwahl2012 Austria elections
       \item rqog Download data from the Quality of Government Institute data
+      \item pollstR Huffpost Pollster API
     \end{itemize}
 
     \end{minipage}
     };
-\node[fancytitle] at (box.north east) {Parliamentary monitoring};
+\node[fancytitle] at (boxpmo.north) {Parliamentary monitoring};
 \end{tikzpicture}
-%
 
-
-%
-\begin{tikzpicture}[transform shape, rotate=0, baseline=-3.5cm]
-\node [mybox] (box) {%
-    \begin{minipage}[t!]{0.5\textwidth}
-
-    \begin{itemize}
-      \item gisfin Finnish geographic location information
-      \item osmar OpenStreetMap tools
-      \item rwfs WFS client
-      \item usbroadband Data for the U.S. National Broadband Map 
-      \item psData Political science data sets 
-      \item replicaX Data anonymization tools
-    \end{itemize}
-
-    \end{minipage}
-    };
-\node[fancytitle] at (box.north east) {Data processing and visualization};
-\end{tikzpicture}
-%
 
 
 \section*{Contact \& Contribute}
@@ -174,24 +142,17 @@ Political Science Review, 107(02), 326–343
     
 \begin{tikzpicture}[node distance = 2cm, auto]
     % Place nodes
-    \node [block] (init) {initialize model};
-    \node [cloud, left of=init] (expert) {expert};
-    \node [cloud, right of=init] (system) {system};
-    \node [block, below of=init] (identify) {identify candidate models};
-    \node [block, below of=identify] (evaluate) {evaluate candidate models};
-    \node [block, left of=evaluate, node distance=3cm] (update) {update model};
-    \node [decision, below of=evaluate] (decide) {is best candidate better?};
-    \node [block, below of=decide, node distance=3cm] (stop) {stop};
+    \node [mybox] (init) {Raw data};
+    \node [cloud, below of=init, node distance=2cm] (preprocess) {Preprocessing};
+    \node [block, below of=preprocess, node distance=2cm] (tidydata) {Tidy Data};
+    \node [cloud, right of=tidydata, node distance=4cm] (analysis) {Analysis};
+    \node [block, below of=analysis, node distance=2cm] (summaries) {Summaries};
+    \node [block, right of=summaries, node distance=4cm] (visualization) {Visualization};
+    \node [block, right of=visualization, node distance=4cm] (reporting) {Reporting};        
+
+
     % Draw edges
-    \path [line] (init) -- (identify);
-    \path [line] (identify) -- (evaluate);
-    \path [line] (evaluate) -- (decide);
-    \path [line] (decide) -| node [near start] {yes} (update);
-    \path [line] (update) |- (identify);
-    \path [line] (decide) -- node {no}(stop);
-    \path [line,dashed] (expert) -- (init);
-    \path [line,dashed] (system) -- (init);
-    \path [line,dashed] (system) |- (evaluate);
+    \path [line,dashed] (preprocess) -- (init);
 \end{tikzpicture}
 
 \end{document}
