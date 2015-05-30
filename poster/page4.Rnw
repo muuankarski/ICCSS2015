@@ -13,13 +13,17 @@
  bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
  breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
  {hyperref}
-\hypersetup{
- pdfstartview={XYZ null null 1}}
+\hypersetup{pdfstartview={XYZ null null 1}}
 \usepackage{authblk}
 \usepackage{nopageno}
 
+% For tikz
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,snakes}
+\usepackage{amsmath,amssymb}
 
 \begin{document}
+\pagestyle{empty}
 
 \vspace{1mm}
 
@@ -29,21 +33,81 @@ The rOpenGov tools are distributed as R packages, including for
 instance:
 
 \begin{itemize}
+
+%Digital humanities
  \item bibliographica: Bibliographic data analysis
  \item estc: British Library English Short Title Catalogue analytics
- \item eurostat: Eurostat open data analysis
  \item fennica: Finnish national bibliography analytics
+
+%Parliamentary monitoring
  \item finpar: Finnish parliamentary data
- \item gisfin: Finnish geographic location information
- \item helsinki: Helsinki open data tools
- \item pxweb: R interface to PX-Web data (Statistics Finland \& Sweden etc.)
- \item rustfare: Russian open data
- \item sorvi: Finnish open government data
+ \item Grazwahl2012: Austria elections
+ \item rqog Download data from the Quality of Government Institute data
+
+%Data processing and visualization
+ \item gisfin Finnish geographic location information
+ \item osmar OpenStreetMap tools
+ \item rwfs WFS client
+ \item usbroadband Data for the U.S. National Broadband Map 
+ \item psData Political science data sets 
+ \item replicaX Data anonymization tools
+
 \end{itemize}
 
 [TODO: NÄITÄ VOISI LISTATA LISÄÄKIN VEPPISIVULTA JA IHAN RYHMITELLÄ
 JOHONKIN BOKSEIHIN? - JOO VOIS RYHMITELLÄ NIIN VEIS VÄHEMMÄN TILAA.
 LISÄKSI JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA.]
+
+% Define box and box title style
+\tikzstyle{mybox} = [draw=red, fill=blue!20, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=red, text=white]
+
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.50\textwidth}
+      % You can also put LaTeX equations here !
+      \begin{itemize}
+ \item eurostat: Eurostat open data analysis
+ \item rustfare: Russian open data
+ \item helsinki: Helsinki open data tools
+ \item sorvi: Finnish open government data
+ \item SmarterPoland Poland state data
+ \item federalregister U.S. Federal Register API
+ \item recalls 	Access U.S. Federal Government Recall Data
+ \item sotkanet Sotkanet R Tools
+ \item mpg FuelEconomy.gov Data      
+      \end{itemize}
+    \end{minipage}
+};
+\node[fancytitle, right=10pt] at (box.north west) {Open Government Data};
+%\node[fancytitle, rounded corners] at (box.east) {$\clubsuit$};
+\end{tikzpicture}%
+%
+\tikzstyle{mybox} = [draw=blue, fill=green!20, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=blue, text=white, ellipse]
+%
+\begin{tikzpicture}[transform shape, rotate=0, baseline=-3.5cm]
+\node [mybox] (box) {%
+    \begin{minipage}[t!]{0.5\textwidth}
+
+    \begin{itemize}
+      \item pxweb PX-Web data (Statistics Finland \& Sweden etc.)
+      \item dkstat StatBank from Statistics Denmark.	
+      \item enigma Enigma API client
+      \item fmi Finnish Meteorological Institute open data 
+      \item pollstR	Huffpost Pollster API
+      \item RPublica ProPublica API 
+      \item rsunlight Interface to Sunlight Foundation
+      \item rtimes New York Times APIs.
+    \end{itemize}
+
+    \end{minipage}
+    };
+\node[fancytitle] at (box.north) {API packages};
+\end{tikzpicture}
+%
 
 
 \section*{Contact \& Contribute}
@@ -53,16 +117,15 @@ LISÄKSI JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA ESIMERKKIKUVA N�
  \item IRC: ropengov@Freenode
 \end{itemize}
 
-\section*{References [ONKOHAN TARPEEN POSTERISSA? JÄTTÄISIN EHKÄ POIS]}
 
-[1] S. Kasberger (2012). Grazwahl: Data Analysis and Visualizations of the communal elections in Graz.R package
+\section*{References}
+
 [2] S. Fortunato and C. Castellano (2012). Physics peeks into the ballot box. Physics Today 65:74
 [3] G. King, J. Pan and M. E. Roberts (2013). How Censorship in China Allows Government Criticism but Silences Collective Expression. American
 Political Science Review, 107(02), 326–343
 [4] M. L. Jockers (2013). Macroanalysis: Digital Methods and Literary History. University of Illinois Press.
 [5] S. Chou, W. Li and R. Sridharan, Democratizing Data Science.
 [6] D. Lazer, et al. (2009). Computational Social Science 323, 721–723
-
 
 
 

@@ -20,6 +20,7 @@
 
 \title{Computational Ecosystems for Social Science}
 \date{}
+\author{}
 
 \begin{document}
   \maketitle
