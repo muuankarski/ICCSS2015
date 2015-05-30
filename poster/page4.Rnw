@@ -6,6 +6,7 @@
 %\usepackage{hyperref}
 \usepackage{geometry}
 \geometry{verbose,tmargin=1.0cm,bmargin=1.5cm,lmargin=1.5cm,rmargin=1.5cm}
+%\noindent
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 \usepackage{url}
@@ -16,6 +17,7 @@
 \hypersetup{pdfstartview={XYZ null null 1}}
 \usepackage{authblk}
 \usepackage{nopageno}
+\setlength\parindent{0pt}
 
 % For tikz
 \usepackage{tikz}
@@ -27,33 +29,48 @@
 
 \vspace{1mm}
 
-The rOpenGov tools are distributed as R packages, including for
-instance: JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA
-ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA - katotaan aluksi toi
-Eurostat-esimerkki, ja sen jälkeen et miten mahtuis + sopii. vois
-toimia mut pitää samalla varoa ettei tunge liikaa kamaa yhteen
-posteriin / LL]
+\section*{rOpenGov - An emerging ecosystem for CSS \& DH}
+
+rOpenGov is a statistical ecosystem focused on open source data
+analysis algorithms relevant to computational social sciences and
+digital humanities. We build on experiences learned from similar
+initiatives in other fields, such as Bioconductor and rOpenSci. We use
+the R statistical programming language, which has a versatile
+computational ecosystem with rich statistical modeling and
+state-of-the-art visualization capabilities.
+
+
+\section*{Reproducible research blog}
+
+The rOpenGov blog at ropengov.github.io is an emerging collection of
+example case studies that showcase the opportunities of reproducible
+open data analytics. The general-purpose research algorithms with a
+wider applicability are distributed as open source R packages. This
+provides {\bf well-documented tools to download, preprocess,
+integrate, analyse, visualize and report digital data streams in a
+fully automated and transparent fashion}. This complements the
+existing R ecosystem by {\bf focusing on methodologies relevant to
+Computational Social Science and Digital Humanities}.\footnote{JOS
+SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA ESIMERKKIKUVA
+NÄISTÄ PAKETEISTA, OLIS KOVA - katotaan aluksi toi Eurostat-esimerkki,
+ja sen jälkeen et miten mahtuis + sopii. vois toimia mut pitää samalla
+varoa ettei tunge liikaa kamaa yhteen posteriin / LL]}
 
 % Define textbox styles
 \tikzstyle{mybox} = [draw=blue, fill=green!20, very thick,
     rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
 \tikzstyle{fancytitle} =[fill=white, text=black, ellipse, draw=blue]
 
-
-\begin{tikzpicture}[baseline=0cm, node distance = 9cm, auto]
+\begin{figure*}[h!]
+\begin{tikzpicture}[baseline=0cm, node distance=9cm, auto]
 \node [mybox] (boxogd){%
     \begin{minipage}{0.44\textwidth}
       % You can also put LaTeX equations here !
       \begin{itemize}
-        \item eurostat: Eurostat open data analysis
- 	\item rustfare: Russian open data
- 	\item helsinki: Helsinki open data tools
- 	\item sorvi: Finnish open government data
- 	\item SmarterPoland Poland state data
- 	\item federalregister U.S. Federal Register API
- 	\item recalls Access U.S. Federal Government Recall Data
- 	\item sotkanet Sotkanet R Tools
- 	\item mpg FuelEconomy.gov Data      
+        \item Regions: eurostat
+	\item Countries: Russia, Finland, Poland, USA
+ 	\item Cities: Helsinki
+	\item Statistics Authorities (Finland, Denmark, Sweden, PX-Web)
       \end{itemize}
     \end{minipage}
 };
@@ -62,123 +79,38 @@ posteriin / LL]
 \node [mybox, right of=boxogd] (box) {%
     \begin{minipage}{0.44\textwidth}
     \begin{itemize}
-      \item gisfin Finnish geographic location information
-      \item osmar OpenStreetMap tools
-      \item rwfs WFS client
-      \item usbroadband Data for U.S. National Broadband Map 
-      \item psData Political science data sets 
-      \item replicaX Data anonymization tools
-      \item pxweb PX-Web data (Statistics Finland \& Sweden etc.)
-      \item dkstat StatBank from Statistics Denmark.	
-      \item enigma Enigma API client
-      \item fmi Finnish Meteorological Institute open data 
-      \item RPublica ProPublica API 
-      \item rsunlight Interface to Sunlight Foundation
-      \item rtimes New York Times APIs.      
+      \item GIS tools (Finland, OpenStreetMap, WFS..)
+      \item Data anonymization %(replicaX)
+      \item Meteorology %(fmi)
+      \item Health and Demography %(sotkanet)
+      \item Political Science %(psData)
     \end{itemize}
     \end{minipage}
     };
 \node[fancytitle] at (box.north) {Data processing and visualization};
 
-\end{tikzpicture}
-
-\begin{tikzpicture}[transform shape, rotate=0, baseline=0cm, node distance=9cm]
-\node [mybox] (boxdh) {%
+\node [mybox, below of=boxogd] (boxdh) {%
     \begin{minipage}[t]{0.44\textwidth}
     \begin{itemize}
-      \item bibliographica: Bibliographic data analysis
-      \item estc: British Library English Short Title Catalogue analytics
-      \item fennica: Finnish national bibliography analytics
+      \item Bibliographic analysis (Finland, UK, Europe) %(bibliographica)
+      \item Media (Enigma, ProPublica, Sunlight Foundation, New York Times)
     \end{itemize}
     \end{minipage}
     };
-\node[fancytitle] at (boxdh.north) {Digital humanities};
+\node[fancytitle] at (boxdh.north) {Digital humanities and media};
 
 \node [mybox, right of=boxdh] (boxpmo) {%
     \begin{minipage}[t]{0.44\textwidth}
-
     \begin{itemize}
-      \item finpar Finnish parliamentary data
-      \item Grazwahl2012 Austria elections
-      \item rqog Download data from the Quality of Government Institute data
-      \item pollstR Huffpost Pollster API
+      \item Election data (Austria, Finland, Russia, Huffpost Pollster) %(pollstR)
+      \item Quality of Government Institute %(rqog)
     \end{itemize}
-
     \end{minipage}
     };
 \node[fancytitle] at (boxpmo.north) {Parliamentary monitoring};
 \end{tikzpicture}
+\end{figure*}
 
 
-
-\section*{References}
-
-\begin{enumerate}
-\item S. Fortunato and C. Castellano (2012). Physics peeks into the ballot box. Physics Today 65:74
-\item G. King, J. Pan and M. E. Roberts (2013). How Censorship in China Allows Government Criticism but Silences Collective Expression. American
-Political Science Review, 107(02), 326–343
-\item M. L. Jockers (2013). Macroanalysis: Digital Methods and Literary History. University of Illinois Press.
-\item S. Chou, W. Li and R. Sridharan, Democratizing Data Science.
-\item D. Lazer, et al. (2009). Computational Social Science 323, 721–723
-\end{enumerate}
-
-
-% Define block styles
-\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
-    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
-    text width=5em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{greenbox} = [rectangle, draw=blue, fill=green!20, 
-    text width=5em, text centered, rounded corners, inner sep=10pt, inner ysep=12pt, very thick]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse, node distance=4cm, minimum height=2em, text width=5em]
-%\tikzstyle{mybox} = [draw=blue, fill=green!20, very thick,
-%    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-    
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}[node distance = 2cm, auto]
-
-    % Place nodes
-    \node [greenbox] (init) {Raw Data 1};
-    \node [greenbox, below of=init, node distance=2cm] (init2) {Raw Data 2};
-    \node [greenbox, below of=init2, node distance=2cm] (init3) {Raw Data 3};    
-
-    \node [cloud, right of=init2, node distance=4cm] (preprocess) {Preprocessing};
-    \node [block, right of=preprocess, node distance=3.5cm] (tidydata) {Tidy\\Data};
-    \node [block, right of=tidydata, node distance=3cm] (summaries) {Statistical\\Summaries};
-
-    \node [block, right of=summaries, node distance=3cm] (figs) {Tables \&\\Figures};
-    \node [cloud, above of=tidydata, node distance=4cm] (analysis) {Analysis};
-
-    \node [greenbox, right of=figs, node distance=3cm] (reporting) {Online Report\\(Github)};
-    \node [cloud, above of=summaries, node distance=3cm] (visualization) {Visualization};
-    \node [cloud, above of=figs, node distance=2cm] (reports) {Document Generation};    
-
-   
-
-    % Draw edges
-    \path [line] (init) -- (preprocess);
-    \path [line] (init2) -- (preprocess);
-    \path [line] (init3) -- (preprocess);
-
-    \path [line] (preprocess) -- (tidydata);
-
-    \path [line,dashed] (analysis) -- (summaries);
-
-    \path [line,dashed] (visualization) -- (figs);
-
-    \path [line,dashed] (reports) -- (reporting);
-
-    %\path [line] (init) |- (tidydata);
-    \path [line] (tidydata) |- (summaries);
-    \path [line] (summaries) |- (figs);
-    \path [line] (figs) |- (reporting);
-
-
-\end{tikzpicture}
-\caption{Reproducible research workflow. The raw data is downloaded from original sources, tidied up, and integrated with other information. Statistical summaries, analyses and visualization are automated with custom open source software libraries. The results are reported in web-based documents via automated document generation. The complete analysis workflow, including full access to every detail from raw data to visualization, is shared publicly via distributed version control in Github. The rOpenGov ecosystem provides dedicated R libraries to support reproducible research in the field of computational social science and digital humanities. For the full source code to reproduce this poster, see [SHALL WE PLACE THE FINAL VERSION UNDER ROPENGOV]}
-\end{center}
-\end{figure}
 
 \end{document}

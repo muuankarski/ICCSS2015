@@ -23,9 +23,7 @@
 
 \vspace{1mm}
 
-
-\section*{Example: Eurostat tools}
-
+\section*{Eurostat open data: a reproducible example}
 
 \begin{figure}[h!]
 <<page4-1, eval=TRUE, dev='pdf', fig.height=5, fig.width=5>>=

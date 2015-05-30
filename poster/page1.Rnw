@@ -1,5 +1,5 @@
 %\documentclass[draft, 10pt,fleqn,twoside]{article}
-\documentclass{article}
+\documentclass[onecolumn]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
@@ -17,12 +17,18 @@
 \usepackage{authblk}
 \usepackage{nopageno}
 
+% For tikz
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,snakes}
+\usepackage{amsmath,amssymb}
+
 \title{Computational Ecosystems for Social Science}
 \date{}
 \author{Contact: ropengov.github.io\\\small{Markus Kainu, Joona Lehtomäki, Juuso Parkkinen, Juha Yrjölä, Måns Magnusson, Mikko Tolonen, Niko Ilomäki, Leo Lahti}}
 
 \begin{document}
-  \maketitle
+\pagestyle{empty}
+\maketitle
 
 
 \vspace{1mm}
@@ -47,46 +53,51 @@ more flexible computational tools are urgently needed for fully
 powered data processing and analysis.
 
 
-\section*{Power of open source communities}
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{greenbox} = [rectangle, draw=blue, fill=green!20, 
+    text width=5em, text centered, rounded corners, inner sep=10pt, inner ysep=12pt, very thick]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse, node distance=4cm, minimum height=2em, text width=5em]
+    
+\begin{figure*}[b!]
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto]
 
-Efficient data analysis relies on customized, reproducible analysis
-workflows that are best developed jointly by the user community.
-Availability of ready-made algorithms for standard data analysis tasks
-allows an individual researcher to avoid reinventing the wheel,
-leaving more time to solve the specific research problems. Solutions
-have emerged in data intensive research fields, such as bioinformatics
-and particle physics, based on open source statistical programming
-languages. The resulting communities, such as Bioconductor (http://bioconductor.org/)
-have proven highly successful, acting as an example for other fields to follow.
+    % Place nodes
+    \node [greenbox] (init) {Raw Data 1};
+    \node [greenbox, below of=init, node distance=1.9cm] (init2) {Raw Data 2};
+    \node [greenbox, below of=init2, node distance=1.9cm] (init3) {Raw Data 3};
+    \node [cloud, right of=init2, node distance=4cm] (preprocess) {Preprocessing};
+    \node [block, right of=preprocess, node distance=3.5cm] (tidydata) {Tidy\\Data};
+    \node [block, right of=tidydata, node distance=3cm] (summaries) {Statistical\\Summaries};
+    \node [block, right of=summaries, node distance=3cm] (figs) {Tables \&\\Figures};
+    \node [cloud, above of=tidydata, node distance=3.5cm] (analysis) {Analysis};
+    \node [greenbox, right of=figs, node distance=3cm] (reporting) {Online Report\\(Github)};
+    \node [cloud, above of=summaries, node distance=2.8cm] (visualization) {Visualization};
+    \node [cloud, above of=figs, node distance=2cm] (reports) {Document Generation};    
 
+    % Draw edges
+    \path [line] (init) -- (preprocess);
+    \path [line] (init2) -- (preprocess);
+    \path [line] (init3) -- (preprocess);
+    \path [line] (preprocess) -- (tidydata);
+    \path [line,dashed] (analysis) -- (summaries);
+    \path [line,dashed] (visualization) -- (figs);
+    \path [line,dashed] (reports) -- (reporting);
 
+    %\path [line] (init) |- (tidydata);
+    \path [line] (tidydata) |- (summaries);
+    \path [line] (summaries) |- (figs);
+    \path [line] (figs) |- (reporting);
 
+\end{tikzpicture}
+\caption{{\bf Reproducible research workflow} Raw data sets are downloaded from original sources, tidied up, and integrated with other information. Statistical summaries, analyses and visualization are then automated with the aid of custom open source software libraries. The results are reported in web-based documents via automated document generation. The complete analysis workflow, including full access to every single detail from raw data to visualization, is shared publicly in distributed version control system (Github). The rOpenGov ecosystem provides dedicated R libraries to support reproducible research in the fields of computational social science and digital humanities. For the full source code to reproduce this poster, see PLACE FINAL VERSION in ROPENGOV}
+\end{center}
+\end{figure*}
 
-% \section*{Background}
-% 
-% The recent explosion in open data availability has created novel
-% opportunities for research, journalism and citizen
-% science. High-quality machine readable data streams are increasingly
-% available on political decision making, historical processes, welfare,
-% traffic, and other aspects of society. There is a great need for
-% analytical tools to take advantage of these new data streams in
-% computational social science, digital humanities, and related fields.
-
-% \section*{Open source data analytics}
-% 
-% Efficient data analysis relies on customized, reproducible analysis
-% workflows that are best developed jointly by the user community.
-% Availability of ready-made algorithms for standard data analysis tasks
-% allows an individual researcher to avoid reinventing the wheel,
-% leaving more time to solve the specific research problems. Solutions
-% have emerged in data intensive research fields, such as bioinformatics
-% and particle physics, based on open source statistical programming
-% languages. In computational social sciences and digital humanities,
-% analogous statistical software libraries are now emerging and have a
-% huge potential to contribute to transforming the field. However, these
-% resources are currently highly scattered and come in various formats,
-% hindering wider adoption. Specific web-based tools are available, but
-% more flexible computational tools are urgently needed for fully
-% powered data processing and analysis.
 
 \end{document}

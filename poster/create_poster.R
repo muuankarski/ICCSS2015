@@ -18,5 +18,5 @@ knit2pdf("page3.Rnw")
 knit2pdf("page4.Rnw")
 
 # And lets take the first page from the abstract jam them together into A2 poster
-system("pdfjam  page1.pdf 1 page2.pdf page3.pdf page4.pdf --nup 2x2  --a2paper --outfile poster.pdf")
+system("pdfjam  page1.pdf 1 page4.pdf page3.pdf page2.pdf --nup 2x2  --a2paper --outfile poster.pdf")
 

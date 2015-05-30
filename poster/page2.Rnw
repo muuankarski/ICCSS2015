@@ -1,5 +1,5 @@
 %\documentclass[draft, 10pt,fleqn,twoside]{article}
-\documentclass[12pt]{article}
+\documentclass[12pt,twocolumn]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
@@ -18,42 +18,29 @@
 \usepackage{authblk}
 \usepackage{nopageno}
 
+% For tikz
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,snakes}
+\usepackage{amsmath,amssymb}
+
 \begin{document}
+\pagestyle{empty}
 
 \vspace{1mm}
 
-\section*{rOpenGov - An emerging ecosystem}
 
-%\section*{rOpenGov developer community and ecosystem}
+\section*{Power of open source communities}
 
-rOpenGov is a statistical ecosystem focused on open source data
-analysis algorithms relevant to computational social sciences and
-digital humanities. 
-% We provide a discussion forum and flexible
-% algorithms for reproducible data analysis in these fields.
-The project is maintained by a core team and a
-number of independent contributors from various countries,
-and we build on experiences learned from similar initiatives in other
-fields, such as Bioconductor and rOpenSci.
-% We are a
-% community of independent package developers from various countries,
-% and we build on experiences learned from similar initiatives in other
-% fields, such as Bioconductor and rOpenSci.
-rOpenGov is based on the
-R statistical programming language, which has
-a versatile computational ecosystem with rich statistical modeling and
-state-of-the-art visualization capabilities.
-% We are actively
-% monitoring developments in other languages, such as Python and
-% Julia. The wide scope of the R language is essential for addressing
-% the diversity of analysis tasks. We complement the prevailing R
-% ecosystem with custom tools for computational social sciences and
-% digital humanities.
-% The packages are distributed through Github
-% (ropengov.github.io). The project is maintained by a core team and a
-% number of independent contributors.
+Efficient data analysis relies on customized, reproducible analysis
+workflows that are best developed jointly by the user community.
+Availability of ready-made algorithms for standard data analysis tasks
+allows an individual researcher to avoid reinventing the wheel,
+leaving more time to solve the specific research problems. Solutions
+have emerged in data intensive research fields, such as bioinformatics
+and particle physics, based on open source statistical programming
+languages. The resulting communities, such as Bioconductor (http://bioconductor.org/)
+have proven highly successful, acting as an example for other fields to follow.
 
-% (see the rOpenGov site for the up-to-date author list).
 
 
 \section*{Ecosystem benefits}
@@ -89,14 +76,24 @@ base. The advantages of the open development model include:
 
 \end{itemize}
 
-\begin{figure}[h!]
-<<page2-1, eval=TRUE, echo=FALSE, dev='pdf', fig.height=3, fig.width=5>>=
-p <- ggplot(mtcars, aes(x=mpg,y=qsec,color=cyl))
-p <- p + geom_point()
-p <- p + geom_smooth(method="lm")
-print(p)
-@
-\caption{This is figure caption.}
-\end{figure}
+
+
+
+
+
+\section*{References}
+
+We are thankful for a number of developers for supporting this
+community. For a full list, see ropengov.github.io.
+
+\begin{enumerate}
+\item rOpenGov core team (2013). R ecosystem for open government data and computational social science. NIPS Machine Learning Open Source Software workshop (MLOSS). December 2013, Lake Tahoe, Nevada, US
+\item S. Fortunato and C. Castellano (2012). Physics peeks into the ballot box. Physics Today 65:74
+\item G. King, J. Pan and M. E. Roberts (2013). How Censorship in China Allows Government Criticism but Silences Collective Expression. American
+Political Science Review, 107(02), 326–343
+\item M. L. Jockers (2013). Macroanalysis: Digital Methods and Literary History. University of Illinois Press.
+\item S. Chou, W. Li and R. Sridharan, Democratizing Data Science.
+\item D. Lazer, et al. (2009). Computational Social Science 323, 721–723
+\end{enumerate}
 
 \end{document}
