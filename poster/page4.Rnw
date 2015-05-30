@@ -27,36 +27,11 @@
 
 \vspace{1mm}
 
-\section*{Further resources}
+%\section*{Further resources}
 
 The rOpenGov tools are distributed as R packages, including for
-instance:
-
-\begin{itemize}
-
-%Digital humanities
- \item bibliographica: Bibliographic data analysis
- \item estc: British Library English Short Title Catalogue analytics
- \item fennica: Finnish national bibliography analytics
-
-%Parliamentary monitoring
- \item finpar: Finnish parliamentary data
- \item Grazwahl2012: Austria elections
- \item rqog Download data from the Quality of Government Institute data
-
-%Data processing and visualization
- \item gisfin Finnish geographic location information
- \item osmar OpenStreetMap tools
- \item rwfs WFS client
- \item usbroadband Data for the U.S. National Broadband Map 
- \item psData Political science data sets 
- \item replicaX Data anonymization tools
-
-\end{itemize}
-
-[TODO: NÄITÄ VOISI LISTATA LISÄÄKIN VEPPISIVULTA JA IHAN RYHMITELLÄ
-JOHONKIN BOKSEIHIN? - JOO VOIS RYHMITELLÄ NIIN VEIS VÄHEMMÄN TILAA.
-LISÄKSI JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA.]
+instance: JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA
+ESIMERKKIKUVA NÄISTÄ PAKETEISTA, OLIS KOVA.]
 
 % Define box and box title style
 \tikzstyle{mybox} = [draw=red, fill=blue!20, very thick,
@@ -107,6 +82,61 @@ LISÄKSI JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA ESIMERKKIKUVA N�
     };
 \node[fancytitle] at (box.north) {API packages};
 \end{tikzpicture}
+
+%
+\begin{tikzpicture}[transform shape, rotate=0, baseline=-3.5cm]
+\node [mybox] (box) {%
+    \begin{minipage}[t!]{0.5\textwidth}
+
+    \begin{itemize}
+      \item bibliographica: Bibliographic data analysis
+      \item estc: British Library English Short Title Catalogue analytics
+      \item fennica: Finnish national bibliography analytics
+    \end{itemize}
+
+    \end{minipage}
+    };
+\node[fancytitle] at (box.north) {Digital humanities};
+\end{tikzpicture}
+%
+
+
+%
+\begin{tikzpicture}[transform shape, rotate=0, baseline=-3.5cm]
+\node [mybox] (box) {%
+    \begin{minipage}[t!]{0.5\textwidth}
+
+    \begin{itemize}
+      \item finpar: Finnish parliamentary data
+      \item Grazwahl2012: Austria elections
+      \item rqog Download data from the Quality of Government Institute data
+    \end{itemize}
+
+    \end{minipage}
+    };
+\node[fancytitle] at (box.north) {Parliamentary monitoring};
+\end{tikzpicture}
+%
+
+
+%
+\begin{tikzpicture}[transform shape, rotate=0, baseline=-3.5cm]
+\node [mybox] (box) {%
+    \begin{minipage}[t!]{0.5\textwidth}
+
+    \begin{itemize}
+      \item gisfin Finnish geographic location information
+      \item osmar OpenStreetMap tools
+      \item rwfs WFS client
+      \item usbroadband Data for the U.S. National Broadband Map 
+      \item psData Political science data sets 
+      \item replicaX Data anonymization tools
+    \end{itemize}
+
+    \end{minipage}
+    };
+\node[fancytitle] at (box.north) {Data processing and visualization};
+\end{tikzpicture}
 %
 
 
@@ -120,13 +150,45 @@ LISÄKSI JOS SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA ESIMERKKIKUVA N�
 
 \section*{References}
 
-[2] S. Fortunato and C. Castellano (2012). Physics peeks into the ballot box. Physics Today 65:74
-[3] G. King, J. Pan and M. E. Roberts (2013). How Censorship in China Allows Government Criticism but Silences Collective Expression. American
+\begin{enumerate}
+\item S. Fortunato and C. Castellano (2012). Physics peeks into the ballot box. Physics Today 65:74
+\item G. King, J. Pan and M. E. Roberts (2013). How Censorship in China Allows Government Criticism but Silences Collective Expression. American
 Political Science Review, 107(02), 326–343
-[4] M. L. Jockers (2013). Macroanalysis: Digital Methods and Literary History. University of Illinois Press.
-[5] S. Chou, W. Li and R. Sridharan, Democratizing Data Science.
-[6] D. Lazer, et al. (2009). Computational Social Science 323, 721–723
+\item M. L. Jockers (2013). Macroanalysis: Digital Methods and Literary History. University of Illinois Press.
+\item S. Chou, W. Li and R. Sridharan, Democratizing Data Science.
+\item D. Lazer, et al. (2009). Computational Social Science 323, 721–723
+\end{enumerate}
 
 
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {initialize model};
+    \node [cloud, left of=init] (expert) {expert};
+    \node [cloud, right of=init] (system) {system};
+    \node [block, below of=init] (identify) {identify candidate models};
+    \node [block, below of=identify] (evaluate) {evaluate candidate models};
+    \node [block, left of=evaluate, node distance=3cm] (update) {update model};
+    \node [decision, below of=evaluate] (decide) {is best candidate better?};
+    \node [block, below of=decide, node distance=3cm] (stop) {stop};
+    % Draw edges
+    \path [line] (init) -- (identify);
+    \path [line] (identify) -- (evaluate);
+    \path [line] (evaluate) -- (decide);
+    \path [line] (decide) -| node [near start] {yes} (update);
+    \path [line] (update) |- (identify);
+    \path [line] (decide) -- node {no}(stop);
+    \path [line,dashed] (expert) -- (init);
+    \path [line,dashed] (system) -- (init);
+    \path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
 
 \end{document}
