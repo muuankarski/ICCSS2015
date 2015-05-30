@@ -1,5 +1,5 @@
 %\documentclass[draft, 10pt,fleqn,twoside]{article}
-\documentclass[12pt]{article}
+\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
@@ -13,19 +13,16 @@
  bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
  breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
  {hyperref}
-\hypersetup{
- pdfstartview={XYZ null null 1}}
+\hypersetup{pdfstartview={XYZ null null 1}}
 \usepackage{authblk}
 \usepackage{nopageno}
 
 \title{Computational Ecosystems for Social Science}
 \date{}
-\author{}
+\author{Contact: ropengov.github.io\\\small{Markus Kainu, Joona Lehtomäki, Juuso Parkkinen, Juha Yrjölä, Måns Magnusson, Mikko Tolonen, Niko Ilomäki, Leo Lahti}}
 
 \begin{document}
   \maketitle
-
-Markus Kainu\footnote{Aleksanteri Institute, University of Helsinki, Finland}, Joona Lehtomäki\footnote{Department of Biosciences, University of Helsinki, Finland}, Juuso Parkkinen\footnote{Reaktor Innovations Oy, Finland}, Juha Yrjölä\footnote{Kansan Muisti ry, Finland}, Måns Magnusson\footnote{Linköping University, Sweden}, Mikko Tolonen\footnote{University of Helsinki}, Niko Ilomäki\footnote{University of Helsinki}, Leo Lahti\footnote{University of Helsinki}. Contact: ropengov.github.io
 
 
 \vspace{1mm}
