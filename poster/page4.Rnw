@@ -31,7 +31,7 @@
 \vspace{1mm}
 
 
-\section*{rOpenGov - An emerging ecosystem for CSS \& DH}
+\section*{rOpenGov - An emerging ecosystem}
 
 rOpenGov is a statistical ecosystem focused on open source data
 analysis algorithms relevant to computational social sciences and
@@ -53,6 +53,10 @@ integrate, analyse, visualize and report digital data streams in a
 fully automated and transparent fashion}. This complements the
 existing R ecosystem by {\bf focusing on methodologies relevant to
 Computational Social Science and Digital Humanities}.
+
+
+
+
 
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
