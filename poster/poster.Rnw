@@ -201,16 +201,17 @@ Computational Social Science and Digital Humanities}.
 	\item Countries: Russia, Finland, Poland, USA
  	\item Cities: Helsinki
 	\item Statistics Authorities (Finland, Denmark, Sweden, PX-Web)
-      \end{itemize}
-
-      {\bf Data processing and visualization}
-    \begin{itemize}
-      \item GIS tools (Finland, OpenStreetMap, WFS..)
+  \item GIS tools (Finland, OpenStreetMap, WFS..)
       \item Data anonymization %(replicaX)
       \item Meteorology %(fmi)
       \item Health and Demography %(sotkanet)
       \item Political Science %(psData)
-    \end{itemize}
+      \end{itemize}
+% 
+%       {\bf Data processing and visualization}
+%     \begin{itemize}
+%       
+%     \end{itemize}
 
     {\bf Digital humanities and media}
     \begin{itemize}
