@@ -30,9 +30,9 @@
 \usepackage{amsmath,amssymb}
 \usetikzlibrary{positioning}
 
-\title{Open Computational Ecosystems for Social Science}
+\title{\Huge Open Computational Ecosystems for Social Science}
 \date{}
-\author{Contact: ropengov.github.io\\\small{Markus Kainu, Joona Lehtomäki, Juuso Parkkinen, Juha Yrjölä, Måns Magnusson, Mikko Tolonen, Niko Ilomäki, Leo Lahti}}
+\author{{Markus Kainu, Joona Lehtomäki, Juuso Parkkinen, Juha Yrjölä, Måns Magnusson, Mikko Tolonen, Niko Ilomäki, Leo Lahti}\\ \Large Contact: http://ropengov.github.io}
 
 \begin{document}
 \pagestyle{empty}
@@ -86,7 +86,7 @@ potential to contribute to transforming these fields.
 
 
 
-    \section*{Power of open source communities}
+    \section*{Power of open communities}
 
 Efficient data analysis relies on customized, reproducible analysis
 workflows that are best developed jointly by the user community.
@@ -164,7 +164,7 @@ approach helps to pool scarce
 \node [myboxwhite, right of=ecosystem, node distance=21cm] (ropengov){%
 \begin{minipage}{0.23\textwidth}
 
-\section*{rOpenGov - An emerging ecosystem}
+\section*{rOpenGov - Ecosystem for computational social sciences and digital humanities}
 
 rOpenGov is a statistical ecosystem focused on open source data
 analysis algorithms relevant to computational social sciences and
@@ -182,26 +182,26 @@ open data analytics. The general-purpose research algorithms with a
 wider applicability are distributed as open source R packages. This
 provides {\bf well-documented tools to download, preprocess,
 integrate, analyse, visualize and report digital data streams in a
-fully automated and transparent fashion}. This complements the
-existing R ecosystem by {\bf focusing on methodologies relevant to
-Computational Social Science and Digital Humanities}.
+fully automated and transparent fashion}.
+% This complements the
+% existing R ecosystem by {\bf focusing on methodologies relevant to
+% Computational Social Science and Digital Humanities}.
 
 \end{minipage}
 };
 
 
 
-\node [mybox, right of=ropengov, node distance=21cm, yshift=15cm] (packages){%
+\node [mybox, right of=ropengov, node distance=21cm, yshift=0cm] (packages){%
     \begin{minipage}{0.23\textwidth}
       % You can also put LaTeX equations here !
-
       {\bf Open Government Data}
       \begin{itemize}
         \item Regions: eurostat
 	\item Countries: Russia, Finland, Poland, USA
  	\item Cities: Helsinki
 	\item Statistics Authorities (Finland, Denmark, Sweden, PX-Web)
-  \item GIS tools (Finland, OpenStreetMap, WFS..)
+  \item GIS tools (OpenStreetMap, WFS, Finland)
       \item Data anonymization %(replicaX)
       \item Meteorology %(fmi)
       \item Health and Demography %(sotkanet)
@@ -235,11 +235,11 @@ Computational Social Science and Digital Humanities}.
 
 
 
-\node [myboxwhite, below of=packages, node distance=21cm, yshift=-20cm] (references){%
+\node [myboxwhite, below of=packages, node distance=35cm, yshift=0cm] (references){%
     \begin{minipage}{0.23\textwidth}
 
     We are thankful for a number of developers for supporting this
-    community. For a full list, see ropengov.github.io.
+    community. For a full list, see http://ropengov.github.io.
 
     \small{
     \section*{References}
@@ -261,7 +261,7 @@ Political Science Review, 107(02), 326–343
 
 
 \node [myboxwhite, below of=ecosystem, node distance=50cm] (example){%
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.69\textwidth}
   \section*{Eurostat open data: a reproducible example}
   %\begin{figure}[h!]
   <<page4-1, eval=TRUE, dev='pdf', fig.height=5, fig.width=5>>=
@@ -282,7 +282,7 @@ Political Science Review, 107(02), 326–343
 %\begin{minipage}{0.5\textwidth}
 
     % Place nodes
-    \node [greenbox, right of=example] (init) {Raw Data 1};
+    \node [greenbox, below of=example] (init) {Raw Data 1};
     \node [greenbox, below of=init, node distance=1.9cm] (init2) {Raw Data 2};
     \node [greenbox, below of=init2, node distance=1.9cm] (init3) {Raw Data 3};
     \node [cloud, right of=init2, node distance=4cm] (preprocess) {Preprocessing};
