@@ -59,26 +59,30 @@
 \node [myboxwhite] (intro){%
     \begin{minipage}{0.23\textwidth}
     
-    \section*{Open data creates opportunities}
+    \section*{Open data creates opportunities for social sciences}
 
 The recent explosion in open data availability has created novel
 opportunities for research, journalism and citizenscience.
-High-quality machine readable data streams are increasingly available
-on political decision making, historical processes, welfare, traffic,
-and other aspects of society.
+% High-quality machine readable data streams are increasingly available
+% on political decision making, historical processes, welfare, traffic,
+% and other aspects of society.
 
 
 
-    \section*{Need for analytical tools}
+%    \section*{Need for analytical tools}
 
 Taking advantage of these new data streams in computational social
 science, digital humanities, and related fields needs novel analytical
 tools. First software libraries are now emerging and have a huge
-potential to contribute to transforming these fields. However, these
-resources are currently highly scattered and come in various formats,
-hindering wider adoption. Specific web-based tools are available, but
-more flexible computational tools are urgently needed for fully
-powered data processing and analysis.
+potential to contribute to transforming these fields. 
+
+
+% However, these
+% resources are currently highly scattered and come in various formats,
+% hindering wider adoption.
+% Specific web-based tools are available, but
+% more flexible computational tools are urgently needed for fully
+% powered data processing and analysis.
 
 
 
@@ -88,12 +92,14 @@ Efficient data analysis relies on customized, reproducible analysis
 workflows that are best developed jointly by the user community.
 Availability of ready-made algorithms for standard data analysis tasks
 allows an individual researcher to avoid reinventing the wheel,
-leaving more time to solve the specific research problems. Solutions
+leaving more time to solve the specific research problems. Successful 
+examples of open source communities
 have emerged in data intensive research fields, such as bioinformatics
 and particle physics, based on open source statistical programming
-languages. The resulting communities, such as Bioconductor
-(http://bioconductor.org/) have proven highly successful, acting as an
-example for other fields to follow.
+languages.
+% The resulting communities, such as Bioconductor
+% (http://bioconductor.org/) have proven highly successful, acting as an
+% example for other fields to follow.
     
     \end{minipage}
 
@@ -104,36 +110,50 @@ example for other fields to follow.
 \node [mybox, right of=intro, node distance=21cm, yshift=0cm] (ecosystem){%
     \begin{minipage}{0.23\textwidth}
 
-\section*{Ecosystem benefits}
+%\section*{Ecosystem benefits}
 
-The ecosystem enables rapid development of scalable and interoperable
-software and provides tools to expand the quantitative methods
-base. The advantages of the open development model include:
+\section*{Advantages of the open development model}
+
+% The ecosystem enables rapid development of scalable and interoperable
+% software and provides tools to expand the quantitative methods
+% base. The advantages of the open development model include:
 
 \begin{itemize}
 
-\item \textbf{Open source}: We use GitHub for shared version control. All
-  contributions are openly licensed. This guarantees that the tools
-  are freely available and the international scientific community
-  remains the owner of the research software.
+\item \textbf{Open source}: We use GitHub for shared version control.
+Openly licensed contributions guarantee that the tools
+  are freely available for the international scientific community.
 
-\item \textbf{Reproducible documentation}: High-quality documentation is critical
-  for package usability. We provide online tutorials with fully
+% All
+%   contributions are openly licensed. This guarantees that the tools
+%   are freely available and the international scientific community
+%   remains the owner of the research software.
+
+\item \textbf{Reproducible documentation}:
+% High-quality documentation is critical
+%   for package usability. 
+  We provide online high-quality tutorials with fully
   reproducible documentation on how to access and analyse specific
   data sources, and to report the statistical results.
 
-\item \textbf{Transparent research}: The programmatic approach makes it possible to
-  publish the data analysis steps from raw data to the final results
-  in full detail. To exemplify this, we publish reproducible case
+\item \textbf{Transparent research}: The data analysis steps from
+raw data to the final results
+are published in full detail.  To exemplify this, we publish reproducible case
   studies based on open data and algorithms in the rOpenGov blog.
+% The programmatic approach makes it possible to
+%   publish the data analysis steps from raw data to the final results
+%   in full detail. To exemplify this, we publish reproducible case
+%   studies based on open data and algorithms in the rOpenGov blog.
 
-\item \textbf{Standardization}: A community-driven approach helps to pool scarce
-  research resources and develop common standards for data
-  analysis. Joint development ensures that the applicability of the
-  tools extends beyond individual data sets and is compatible with
-  other tools. Whereas different research projects can utilize the
-  same standard algorithms to access and preprocess the data, the
-  source code can be flexibly adapted to different tasks.
+\item \textbf{Standardization}: A community-driven joint development 
+approach helps to pool scarce
+  research resources, develop common standards and ensure compatibilty for data
+  analysis.
+%   Joint development ensures that the applicability of the
+%   tools extends beyond individual data sets and is compatible with
+%   other tools. Whereas different research projects can utilize the
+%   same standard algorithms to access and preprocess the data, the
+%   source code can be flexibly adapted to different tasks.
 
   \end{itemize}
 
@@ -141,8 +161,37 @@ base. The advantages of the open development model include:
 };
 
 
+\node [myboxwhite, right of=ecosystem, node distance=21cm] (ropengov){%
+\begin{minipage}{0.23\textwidth}
 
-\node [mybox, right of=ecosystem, node distance=21cm, yshift=15cm] (packages){%
+\section*{rOpenGov - An emerging ecosystem}
+
+rOpenGov is a statistical ecosystem focused on open source data
+analysis algorithms relevant to computational social sciences and
+digital humanities. We build on experiences learned from similar
+initiatives in other fields, such as Bioconductor and rOpenSci. We use
+the R statistical programming language, which has a versatile
+computational ecosystem with rich statistical modeling and
+state-of-the-art visualization capabilities.
+
+\section*{Reproducible research blog}
+
+The rOpenGov blog at ropengov.github.io is an emerging collection of
+example case studies that showcase the opportunities of reproducible
+open data analytics. The general-purpose research algorithms with a
+wider applicability are distributed as open source R packages. This
+provides {\bf well-documented tools to download, preprocess,
+integrate, analyse, visualize and report digital data streams in a
+fully automated and transparent fashion}. This complements the
+existing R ecosystem by {\bf focusing on methodologies relevant to
+Computational Social Science and Digital Humanities}.
+
+\end{minipage}
+};
+
+
+
+\node [mybox, right of=ropengov, node distance=21cm, yshift=15cm] (packages){%
     \begin{minipage}{0.23\textwidth}
       % You can also put LaTeX equations here !
 
@@ -185,7 +234,7 @@ base. The advantages of the open development model include:
 
 
 
-\node [myboxwhite, right of=packages, node distance=21cm, yshift=10cm] (references){%
+\node [myboxwhite, below of=packages, node distance=21cm, yshift=-20cm] (references){%
     \begin{minipage}{0.23\textwidth}
 
     We are thankful for a number of developers for supporting this
@@ -224,33 +273,6 @@ Political Science Review, 107(02), 326–343
 
 
 
-\node [myboxwhite, below of=references, node distance=45cm] (ropengov){%
-\begin{minipage}{0.23\textwidth}
-
-\section*{rOpenGov - An emerging ecosystem}
-
-rOpenGov is a statistical ecosystem focused on open source data
-analysis algorithms relevant to computational social sciences and
-digital humanities. We build on experiences learned from similar
-initiatives in other fields, such as Bioconductor and rOpenSci. We use
-the R statistical programming language, which has a versatile
-computational ecosystem with rich statistical modeling and
-state-of-the-art visualization capabilities.
-
-\section*{Reproducible research blog}
-
-The rOpenGov blog at ropengov.github.io is an emerging collection of
-example case studies that showcase the opportunities of reproducible
-open data analytics. The general-purpose research algorithms with a
-wider applicability are distributed as open source R packages. This
-provides {\bf well-documented tools to download, preprocess,
-integrate, analyse, visualize and report digital data streams in a
-fully automated and transparent fashion}. This complements the
-existing R ecosystem by {\bf focusing on methodologies relevant to
-Computational Social Science and Digital Humanities}.
-
-\end{minipage}
-};
 
 
 
