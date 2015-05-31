@@ -1,5 +1,5 @@
 %\documentclass[draft, 10pt,fleqn,twoside]{article}
-\documentclass[12pt,twocolumn]{article}
+\documentclass[12pt,onecolumn]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
@@ -29,71 +29,82 @@
 \vspace{1mm}
 
 
-\section*{Power of open source communities}
-
-Efficient data analysis relies on customized, reproducible analysis
-workflows that are best developed jointly by the user community.
-Availability of ready-made algorithms for standard data analysis tasks
-allows an individual researcher to avoid reinventing the wheel,
-leaving more time to solve the specific research problems. Solutions
-have emerged in data intensive research fields, such as bioinformatics
-and particle physics, based on open source statistical programming
-languages. The resulting communities, such as Bioconductor (http://bioconductor.org/)
-have proven highly successful, acting as an example for other fields to follow.
 
 
 
-\section*{Ecosystem benefits}
+\footnote{JOS
+SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA ESIMERKKIKUVA
+NÄISTÄ PAKETEISTA, OLIS KOVA - katotaan aluksi toi Eurostat-esimerkki,
+ja sen jälkeen et miten mahtuis + sopii. vois toimia mut pitää samalla
+varoa ettei tunge liikaa kamaa yhteen posteriin / LL]}
 
-The ecosystem enables rapid development of scalable and interoperable
-software and provides tools to expand the quantitative methods
-base. The advantages of the open development model include:
+% Define textbox styles
+\tikzstyle{mybox} = [draw=blue, fill=green!20, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{myboxwhite} = [rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]    
+\tikzstyle{fancytitle} =[fill=white, text=black, ellipse, draw=blue]
 
-\begin{itemize}
+\begin{figure*}[h!]
+\begin{tikzpicture}[baseline=0cm, node distance=2cm, auto]
+\node [mybox] (packages){%
+    \begin{minipage}{0.44\textwidth}
+      % You can also put LaTeX equations here !
 
-\item \textbf{Open source}: We use GitHub for shared version control. All
-  contributions are openly licensed. This guarantees that the tools
-  are freely available and the international scientific community
-  remains the owner of the research software.
+      {\bf Open Government Data}
+      \begin{itemize}
+        \item Regions: eurostat
+	\item Countries: Russia, Finland, Poland, USA
+ 	\item Cities: Helsinki
+	\item Statistics Authorities (Finland, Denmark, Sweden, PX-Web)
+      \end{itemize}
 
-\item \textbf{Reproducible documentation}: High-quality documentation is critical
-  for package usability. We provide online tutorials with fully
-  reproducible documentation on how to access and analyse specific
-  data sources, and to report the statistical results.
+      {\bf Data processing and visualization}
+    \begin{itemize}
+      \item GIS tools (Finland, OpenStreetMap, WFS..)
+      \item Data anonymization %(replicaX)
+      \item Meteorology %(fmi)
+      \item Health and Demography %(sotkanet)
+      \item Political Science %(psData)
+    \end{itemize}
 
-\item \textbf{Transparent research}: The programmatic approach makes it possible to
-  publish the data analysis steps from raw data to the final results
-  in full detail. To exemplify this, we publish reproducible case
-  studies based on open data and algorithms in the rOpenGov blog.
+    {\bf Digital humanities and media}
+    \begin{itemize}
+      \item Bibliographic analysis (Finland, UK, Europe) %(bibliographica)
+      \item Media (Enigma, ProPublica, Sunlight Foundation, New York Times)
+    \end{itemize}
 
-\item \textbf{Standardization}: A community-driven approach helps to pool scarce
-  research resources and develop common standards for data
-  analysis. Joint development ensures that the applicability of the
-  tools extends beyond individual data sets and is compatible with
-  other tools. Whereas different research projects can utilize the
-  same standard algorithms to access and preprocess the data, the
-  source code can be flexibly adapted to different tasks.
+    {\bf Parliamentary monitoring}
+    \begin{itemize}
+      \item Election data (Austria, Finland, Russia, Huffpost Pollster) %(pollstR)
+      \item Quality of Government Institute %(rqog)
+    \end{itemize}
 
-\end{itemize}
+    \end{minipage}
+};
+\node[fancytitle, right=10pt] at (packages.north west) {rOpenGov packages};
 
+\node [myboxwhite, right of=packages, node distance=9cm] (references){%
+    \begin{minipage}{0.44\textwidth}
 
+    We are thankful for a number of developers for supporting this
+    community. For a full list, see ropengov.github.io.
 
+    \small{
+    \section*{References}\footnote{REFERENSSEJÄ voisi ehkä vähän karsia.}
 
-
-
-\section*{References}
-
-We are thankful for a number of developers for supporting this
-community. For a full list, see ropengov.github.io.
-
-\begin{enumerate}
-\item rOpenGov core team (2013). R ecosystem for open government data and computational social science. NIPS Machine Learning Open Source Software workshop (MLOSS). December 2013, Lake Tahoe, Nevada, US
-\item S. Fortunato and C. Castellano (2012). Physics peeks into the ballot box. Physics Today 65:74
-\item G. King, J. Pan and M. E. Roberts (2013). How Censorship in China Allows Government Criticism but Silences Collective Expression. American
+    \begin{enumerate}
+      \item rOpenGov core team (2013). R ecosystem for open government data and computational social science. NIPS Machine Learning Open Source Software workshop (MLOSS). December 2013, Lake Tahoe, Nevada, US
+      \item S. Fortunato and C. Castellano (2012). Physics peeks into the ballot box. Physics Today 65:74
+      \item G. King, J. Pan and M. E. Roberts (2013). How Censorship in China Allows Government Criticism but Silences Collective Expression. American
 Political Science Review, 107(02), 326–343
-\item M. L. Jockers (2013). Macroanalysis: Digital Methods and Literary History. University of Illinois Press.
-\item S. Chou, W. Li and R. Sridharan, Democratizing Data Science.
-\item D. Lazer, et al. (2009). Computational Social Science 323, 721–723
-\end{enumerate}
+      \item M. L. Jockers (2013). Macroanalysis: Digital Methods and Literary History. University of Illinois Press.
+      \item S. Chou, W. Li and R. Sridharan, Democratizing Data Science.
+      \item D. Lazer, et al. (2009). Computational Social Science 323, 721–723
+    \end{enumerate}
+    }
+    \end{minipage}
+};
+\end{tikzpicture}
+\end{figure*}
 
 \end{document}
