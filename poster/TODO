@@ -1,43 +1,4 @@
 
-
-[alkuun selvemmin mikä on se tarve mihin comp ecosystems 
-               vastaa ja ropengov erityisesti !!!]
+pieni laatikko "What is R?" linkkeineen?
 
 
-Toistettavuudesta (reproducibility) puhutaan paljon, mut sitä ei
-avata: mitä tää on ja miks se on hyvä juttu?
-
-"Computational", "algorithms", "statistical ecosystem" ->
-                  näitä käytetään nyt pikkaisen samassa konteksista. Onko
-                  vaara, et ei muodostu oikein selkeetä kuvaa mikä tää homma
-                  oikein on?
-
- R on varmaan suurimalle osalle tuntematon juttu, miten olis
-                  joku pieni laatikko "What is R?" linkkeineen?
-
- URL:it etuliitteellä
-                  "https://" ja eri värillä -> osuvat silmiin paremmin
-
-
-Sanaa "ecosystem" viljellään aika paljon
-
-Yks juttu mikä tuli mieleen, niin miten olis jos ottais
-                  jonkun valmiin (Eurostat?) esimerkin, jossa yhdistyis Fig 1:n
-                  työvuo, vetäis tulokset A4:ks, printtais ja laittais isolla
-                  mukaan "käy katsomassa sorsat GitHubista"?
-
-"ROpenGov"-laatikko hyvä, mut vois olla vielä parempi jos 
-                  mukana olis linkkejä noihin paketteihin. Ei oo kyl helppo 
-                  saada mahtumaan mukaan
-
-posterin otsikko voisi olla isommalla (on nyt 
-                  pienempi kuin väliotsikot)
-
-\footnote{JOS
-SAISI KAKSI PALSTAA, JOISTA TOISELLA OLISI MUUTAMA ESIMERKKIKUVA
-NÄISTÄ PAKETEISTA, OLIS KOVA - katotaan aluksi toi Eurostat-esimerkki,
-ja sen jälkeen et miten mahtuis + sopii. vois toimia mut pitää samalla
-varoa ettei tunge liikaa kamaa yhteen posteriin / LL]}
-
-
-\footnote{REFERENSSEJÄ voisi ehkä vähän karsia.}
