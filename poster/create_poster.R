@@ -1,6 +1,10 @@
 # Idea - Create four A4 pdf's and bind them together into single A2 file using pdfjam
 
 
+POSTER DEVELOPMENT MOVED TO ROPENGOV SITE:
+https://github.com/rOpenGov/poster/tree/master/2015-ICCSS
+
+
 library(ggplot2)
 library(gridExtra)
 
